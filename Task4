@@ -1,36 +1,48 @@
-import java.util.Scanner;
+% Calculate Compound or simple interest
+%
+%                         _____________________
+% input data and  --->   | calculate interest  | -----> output interst
+% type of interest       |_____________________|
+%
+%
+clear
+clc
+%simple interest
+% I = P r t
+%
 
-class MyCal {
-    public static long power(int i,int j) throws Exception {
-        if(i<0||j<0) {
-            throw new Exception("n or p should not be negative.");      
-        }
-        else if(i==0 &&j==0) {
-            throw new Exception("n and p should not be zero.");
-        }
-        else {
-            long result = (long)(Math.pow(i,j));
-            return result;
-        }
-    }
+interesttype=input('Would you like to calculate 1. Simple interest or 2. Compound interest: ');
 
-}
-
-public class Solution {
-    public static final MyCal my_cal=new MyCal();
-    public static final Scanner in=new Scanner(System.in);
-
-    public static void main(String[] args) {
-        while (in.hasNextInt()) {
-            int i = in.nextInt();
-            int j= in .nextInt();
-
-            try 
-            {
-                System.out.println(my_cal.power(i,j));
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
-    }
-}
+if interesttype == 1;
+    disp('SI:')
+    principal = input('Enter the Original amount borrowed or deposited:');
+    rate = input('Enter the rate of interest:');
+    time = input('Enter the time:');
+    
+    % This if statement is used to check whether the rate is enetered
+    % as a integer or decimal and correctly calculates the interest
+    if rate < 1;
+        interest = principal * rate * time;
+        disp('The interest was equal to:')
+        disp(interest)
+    else rate > 1;
+        interest = principal * (rate/100)*time;
+        disp('The interest was equal to:')
+        disp(interest)
+    end
+elseif interesttype ==2 ;
+    disp('CI:')
+    principal = input('Enter the Original amount borrowed or deposited:');
+    rate = input('Enter the rate of interest:');
+    time = input('Enter the time:');
+  
+    if rate < 1;
+        interest = principal *((1 + rate)^time);
+        disp('The interest was equal to:')
+        disp(interest)
+    else rate > 1;
+        interest = principal * ((1 + rate/100)^time);
+        disp('The interest was equal to:')
+        disp(interest)
+    end
+end 

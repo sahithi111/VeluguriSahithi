@@ -1,36 +1,23 @@
 
-clear
-clc
+import java.util .*;
+import org.apache.log4j.*;
+class sici
+{
+    public static void main (String args[ ])
+{
 
-interesttype=input('1.SI or 2.CI:');
-
-if interesttype == 1;
-    disp('SI:')
-    principal = input('Enter the Original amount borrowed or deposited:');
-    rate = input('Enter R:');
-    time = input('Enter T:');
-    if rate < 1;
-        interest = principal * rate * time;
-        disp('The interest was equal to:')
-        disp(interest)
-    else rate > 1;
-        interest = principal * (rate/100)*time;
-        disp('Interest:')
-        disp(interest)
-    end
-elseif interesttype ==2 ;
-    disp('CI:')
-    principal = input('Enter P:');
-    rate = input('Enter R:');
-    time = input('Enter T:');
-  
-    if rate < 1;
-        interest = principal *((1 + rate)^time);
-        disp('Interest:')
-        disp(interest)
-    else rate > 1;
-        interest = principal * ((1 + rate/100)^time);
-        disp('The interest was equal to:')
-        disp(interest)
-    end
-end 
+    double pr, rate, t, sim,com;
+    Scanner sc=new Scanner (System. in);
+    private static Logger logger = LogManager.getLogger(AppClass.class);
+   logger.info("Enter the amount:");
+    pr=sc.nextDouble();
+    logger.info("Enter no of yrs:");
+    t=sc.nextDouble();
+    logger.info("Enter the rate:");
+    rate=sc.nextDouble();
+    sim=(pr * t * rate)/100;
+    com=pr * Math.pow(1.0+rate/100.0,t) - pr;
+   logger.info("Simple Interest="+sim);
+   logger.info("Compound Interest="+com);
+   }
+}

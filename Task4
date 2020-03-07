@@ -2,7 +2,7 @@
 clear
 clc
 
-interesttype=input('Would you like to calculate 1.SI or 2.CI: ');
+interesttype=input('1.SI or 2.CI:');
 
 if interesttype == 1;
     disp('SI:')
@@ -15,7 +15,7 @@ if interesttype == 1;
         disp(interest)
     else rate > 1;
         interest = principal * (rate/100)*time;
-        disp('The interest was equal to:')
+        disp('Interest:')
         disp(interest)
     end
 elseif interesttype ==2 ;
@@ -26,7 +26,7 @@ elseif interesttype ==2 ;
   
     if rate < 1;
         interest = principal *((1 + rate)^time);
-        disp('The interest was equal to:')
+        disp('Interest:')
         disp(interest)
     else rate > 1;
         interest = principal * ((1 + rate/100)^time);

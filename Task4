@@ -1,26 +1,14 @@
-% Calculate Compound or simple interest
-%
-%                         _____________________
-% input data and  --->   | calculate interest  | -----> output interst
-% type of interest       |_____________________|
-%
-%
+
 clear
 clc
-%simple interest
-% I = P r t
-%
 
-interesttype=input('Would you like to calculate 1. Simple interest or 2. Compound interest: ');
+interesttype=input('Would you like to calculate 1.SI or 2.CI: ');
 
 if interesttype == 1;
     disp('SI:')
     principal = input('Enter the Original amount borrowed or deposited:');
-    rate = input('Enter the rate of interest:');
-    time = input('Enter the time:');
-    
-    % This if statement is used to check whether the rate is enetered
-    % as a integer or decimal and correctly calculates the interest
+    rate = input('Enter R:');
+    time = input('Enter T:');
     if rate < 1;
         interest = principal * rate * time;
         disp('The interest was equal to:')
@@ -32,9 +20,9 @@ if interesttype == 1;
     end
 elseif interesttype ==2 ;
     disp('CI:')
-    principal = input('Enter the Original amount borrowed or deposited:');
-    rate = input('Enter the rate of interest:');
-    time = input('Enter the time:');
+    principal = input('Enter P:');
+    rate = input('Enter R:');
+    time = input('Enter T:');
   
     if rate < 1;
         interest = principal *((1 + rate)^time);
